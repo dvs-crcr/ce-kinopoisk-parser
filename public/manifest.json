@@ -1,0 +1,33 @@
+{
+	"name": "Kinopoisk Parser",
+	"version": "1.0.0",
+	"description": "Parse kinopoisk films/tvseries page and download poster image file.",
+	"author": "dvs <dvs@crcr.ru>",
+	"short_name": "ce-kinopoisk-parser",
+	"background": {
+		"scripts": [ "background.js" ]
+	},
+	"externally_connectable": {
+		"matches": ["https://*.kinopoisk.ru/*","https://rating.kinopoisk.ru/*"]
+	},
+	"icons": {"128":"assets/img/icon_128.png"},
+	"permissions": [
+		"downloads",
+		"https://*.kinopoisk.ru/*",
+		"https://rating.kinopoisk.ru/*",
+		"*://*.yandex.net/*"
+	],
+	"content_scripts": [
+		{
+			"matches":[ "*://*.kinopoisk.ru/*", "*://kinopoisk.ru/*" ],
+			"css": ["assets/css/styles.css"],
+			"js": ["injector.js"],
+			"run_at": "document_idle"
+		}
+	],
+	"web_accessible_resources": [
+		"contentScript.js",
+		"assets/*"
+	],
+	"manifest_version": 2
+}
