@@ -1,2 +1,1 @@
-# ce-kinopoisk-parser
-Kinopoisk parse chrome extension
+# Kinopoisk parse chrome extension
